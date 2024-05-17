@@ -4,7 +4,10 @@ const Combobox = (props) => {
 	return (
 		<div className="lista-suspensa">
 			<label>{ props.label }</label>
-			<select>
+			<select 
+				required={props.required} 
+				value={props.value} 
+				onChange={event => props.handleKeyup(event.target.value) }>
 				{props.itens.map(item => <option key={item}>{item}</option>)}
 			</select>
 		</div>
