@@ -4,21 +4,21 @@ body {
 	  sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-  }
+}
   
-  .times {
+.times {
 	text-align: center;
-  }
+}
   
-  h1 {
+h1 {
 	font-size: 40px;
 	color: #6278F7;
 	border-bottom: 4px solid #6278F7;
 	display: inline-block;
 	padding-bottom: 24px;
 	margin: 32px 0;
-  }
+}
   
-  h1, h2 {
+h1, h2, h3, h4, h5, label {
 	font-family: 'Prata', serif;
-  }
+}

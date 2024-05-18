@@ -196,6 +196,10 @@ function App() {
 	setCollaborators([...collaborators, collaborator])
   }
 
+  const onCollaboratorDelete = () => {
+	console.log('onDelete')
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -210,7 +214,9 @@ function App() {
 							name={team.name} 
 							colaboradores={collaborators.filter(collaborator => collaborator.team === team.name)}
 							primaryColor={team.primaryColor} 
-							secondaryColor={team.secondaryColor} />
+							secondaryColor={team.secondaryColor} 
+							onDelete={onCollaboratorDelete}
+						/>
 			}) 
 		}
 	  </section>
