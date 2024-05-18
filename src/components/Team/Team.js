@@ -7,16 +7,21 @@ const Team = (props) => {
 	}
 
 	return (
-		<section className="time" style={css}>
-			<h3 style={{ borderColor: props.primaryColor }}>{props.nome}</h3>
-			{props.colaboradores.map(collaborator => {
-				return <Collaborator 
-							name={collaborator.name}
-							team={collaborator.role}
-							image={collaborator.image}
-						/>
-			})}
-		</section>
+		props.colaboradores.length > 0 ?
+			<section className="time" style={css}>
+				<h3 style={{ borderColor: props.primaryColor }}>{props.nome}</h3>
+				<div className='colaboradores'>
+					{props.colaboradores.map((collaborator, index) => {
+						return <Collaborator 
+									key={`${collaborator.name}-${index}`}
+									name={collaborator.name}
+									team={collaborator.role}
+									image={collaborator.image}
+								/>
+					})}
+				</div>
+			</section> : ''
+
 	)
 }
 

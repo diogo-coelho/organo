@@ -15,6 +15,10 @@ const FormGroup = (props) => {
 		props.handleAddCollaborator({
 			name, role, image, team
 		})
+		setName('')
+		setRole('')
+		setImage('')
+		setTeam('')
 	}
 
 	return (
