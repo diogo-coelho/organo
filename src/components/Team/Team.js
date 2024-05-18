@@ -13,7 +13,7 @@ const Team = (props) => {
 			<section className="time" style={css}>
 				<input 
 					value={props.primaryColor} 
-					onChange={(event) => props.changeColor(event.target.value, props.name)} 
+					onChange={(event) => props.changeColor(event.target.value, props.id)} 
 					type="color" 
 					className="input-color" 
 				/>
