@@ -9,16 +9,6 @@ const FormGroup = (props) => {
 	const [role, setRole] = useState('')
 	const [image, setImage] = useState('')
 	const [team, setTeam] = useState('')
-
-	const teams = [
-		'Programação',
-		'Fronte-end',
-		'Data Science',
-		'Devops',
-		'UX e Design',
-		'Mobile',
-		'Inovação e Gestão'
-	]
 	
 	const onSave = (event) => {
 		event.preventDefault()
@@ -55,7 +45,7 @@ const FormGroup = (props) => {
 				<Combobox 
 					required={true} 
 					label="Time" 
-					itens={teams} 
+					itens={props.teams} 
 					value={team}
 					handleKeyup={value => setTeam(value)} 
 				/>
