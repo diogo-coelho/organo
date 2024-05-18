@@ -9,13 +9,13 @@ const Team = (props) => {
 	return (
 		props.colaboradores.length > 0 ?
 			<section className="time" style={css}>
-				<h3 style={{ borderColor: props.primaryColor }}>{props.nome}</h3>
+				<h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
 				<div className='colaboradores'>
 					{props.colaboradores.map((collaborator, index) => {
 						return <Collaborator 
 									key={`${collaborator.name}-${index}`}
 									name={collaborator.name}
-									team={collaborator.role}
+									role={collaborator.role}
 									image={collaborator.image}
 									backgroundColor={props.primaryColor}
 								/>
