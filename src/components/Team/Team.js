@@ -17,6 +17,7 @@ const Team = (props) => {
 									name={collaborator.name}
 									team={collaborator.role}
 									image={collaborator.image}
+									backgroundColor={props.primaryColor}
 								/>
 					})}
 				</div>

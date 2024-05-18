@@ -8,7 +8,8 @@ const Combobox = (props) => {
 				required={props.required} 
 				value={props.value} 
 				onChange={event => props.handleKeyup(event.target.value) }>
-				{props.itens.map(item => <option key={item}>{item}</option>)}
+					<option></option>
+					{props.itens.map(item => <option key={item}>{item}</option>)}
 			</select>
 		</div>
 	)
