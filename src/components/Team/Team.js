@@ -10,6 +10,13 @@ const Team = (props) => {
 	return (
 		props.colaboradores.length > 0 ?
 			<section className="time" style={css}>
+				<input 
+					value={props.primaryColor} 
+					onChange={(event) => props.changeColor(event.target.value, props.name)} 
+					type="color" 
+					className="input-color" 
+				/>
+				
 				<h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
 				<div className='colaboradores'>
 					{props.colaboradores.map((collaborator, index) => {
