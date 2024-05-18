@@ -1,9 +1,10 @@
 import './Team.css'
+import hexToRgba from 'hex-to-rgba'
 import Collaborator from '../Collaborator/Collaborator'
 
 const Team = (props) => {
 	const css = { 
-		backgroundColor: props.secondaryColor, 
+		backgroundColor: hexToRgba(props.primaryColor, '0.3'), 
 		backgroundImage: 'url(/images/fundo.png)', 
 	}
 
