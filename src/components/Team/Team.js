@@ -9,7 +9,7 @@ const Team = (props) => {
 	}
 
 	return (
-		props.colaboradores.length > 0 ?
+		props.collaborators.length > 0 ?
 			<section className="time" style={css}>
 				<input 
 					value={props.primaryColor} 
@@ -20,17 +20,16 @@ const Team = (props) => {
 				
 				<h3 style={{ borderColor: props.primaryColor }}>{props.name}</h3>
 				<div className='colaboradores'>
-					{props.colaboradores.map((collaborator, index) => {
-
-						return <Collaborator 
-									key={`${collaborator.name}-${index}`}
-									id={collaborator.id}
-									name={collaborator.name}
-									role={collaborator.role}
-									image={collaborator.image}
-									backgroundColor={props.primaryColor}
-									onDelete={props.onDelete}
-								/>
+					{props.collaborators.map((collaborator, index) => {
+						return (
+							<Collaborator 
+								key={`${collaborator.name}-${index}`}
+								collaborator={collaborator}
+								backgroundColor={props.primaryColor}
+								onDelete={props.onDelete}
+								toggleFavorite={props.toggleFavorite}
+							/>
+						)
 					})}
 				</div>
 			</section> : ''

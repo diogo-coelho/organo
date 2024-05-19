@@ -10,7 +10,7 @@ const FormGroup = (props) => {
 	const [image, setImage] = useState('')
 	const [team, setTeam] = useState('')
 	const [teamName, setTeamName] = useState('')
-	const [teamColor, setTeamColor] = useState('')
+	const [teamColor, setTeamColor] = useState('#000000')
 	
 	const onSave = (event) => {
 		event.preventDefault()
@@ -27,7 +27,7 @@ const FormGroup = (props) => {
 		event.preventDefault()
 		props.registerTeam({ name: teamName, primaryColor: teamColor })
 		setTeamName('')
-		setTeamColor('')
+		setTeamColor('#000000')
 	}
 
 	return (
