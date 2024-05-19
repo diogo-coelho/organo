@@ -78,6 +78,7 @@ const FormGroup = (props) => {
 				<InputField 
 					required
 					label="Cor" 
+					type="color"
 					placeholder="Digite a cor do time" 
 					value={teamColor}
 					handleKeyup={value => setTeamColor(value)} 
