@@ -221,8 +221,8 @@ function App() {
 	setCollaborators([...collaborators, collaborator])
   }
 
-  const onCollaboratorDelete = () => {
-	console.log('onDelete')
+  const onCollaboratorDelete = (id) => {
+	setCollaborators(collaborators.filter(collaborator => collaborator.id !== id))
   }
 
   const changeTeamColor = (color, id) => {
@@ -234,11 +234,19 @@ function App() {
 	}))
   }
 
+  const registerTeam = (newTeam) => {
+	setTeams([
+		...teams, 
+		{ ...newTeam, id: uuidv4() }
+	])
+  }
+
   return (
     <div className="App">
       <Banner />
 	  <FormGroup
 	  	teams={teams.map(team => team.name)} 
+		registerTeam={registerTeam}
 	  	handleAddCollaborator={collaborator => handleAddCollaborator(collaborator) } 
 	  />
 	  <section className="times">

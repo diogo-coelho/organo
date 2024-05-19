@@ -24,6 +24,7 @@ const Team = (props) => {
 
 						return <Collaborator 
 									key={`${collaborator.name}-${index}`}
+									id={collaborator.id}
 									name={collaborator.name}
 									role={collaborator.role}
 									image={collaborator.image}

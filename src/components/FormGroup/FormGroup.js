@@ -9,6 +9,8 @@ const FormGroup = (props) => {
 	const [role, setRole] = useState('')
 	const [image, setImage] = useState('')
 	const [team, setTeam] = useState('')
+	const [teamName, setTeamName] = useState('')
+	const [teamColor, setTeamColor] = useState('')
 	
 	const onSave = (event) => {
 		event.preventDefault()
@@ -19,6 +21,13 @@ const FormGroup = (props) => {
 		setRole('')
 		setImage('')
 		setTeam('')
+	}
+
+	const onRegisterNewTeam = (event) => {
+		event.preventDefault()
+		props.registerTeam({ name: teamName, primaryColor: teamColor })
+		setTeamName('')
+		setTeamColor('')
 	}
 
 	return (
@@ -54,6 +63,26 @@ const FormGroup = (props) => {
 					handleKeyup={value => setTeam(value)} 
 				/>
 				<MyButton>Criar botão</MyButton>
+			</form>
+
+			<form onSubmit={onRegisterNewTeam} >
+				<h2>Preencha os dados para criar um novo time</h2>
+
+				<InputField 
+					required 
+					label="Nome do time" 
+					placeholder="Digite o nome do time"
+					value={teamName}
+					handleKeyup={value => setTeamName(value)} 
+				/>
+				<InputField 
+					required
+					label="Cor" 
+					placeholder="Digite a cor do time" 
+					value={teamColor}
+					handleKeyup={value => setTeamColor(value)} 
+				/>
+				<MyButton>Criar um novo time</MyButton>
 			</form>
 		</section>
 	)
