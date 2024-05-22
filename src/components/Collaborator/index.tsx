@@ -1,7 +1,20 @@
 import { AiFillCloseCircle, AiFillHeart, AiOutlineHeart } from 'react-icons/ai'
 import './Collaborator.css'
+import { ICollaborator } from '../../shared/interfaces/ICollaborator'
 
-const Collaborator = ({collaborator, backgroundColor, onDelete, toggleFavorite }) => {
+interface CollaboratorProps {
+	collaborator: ICollaborator
+	backgroundColor: string
+	onDelete: (id: string) => void
+	toggleFavorite: (id: string) => void
+}
+
+const Collaborator = ({
+	collaborator, 
+	backgroundColor, 
+	onDelete, 
+	toggleFavorite 
+}: CollaboratorProps) => {
 	const handleFavorite = () => {
 		toggleFavorite(collaborator.id)
 	}

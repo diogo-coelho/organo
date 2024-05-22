@@ -5,10 +5,10 @@ interface MyButtonProps {
 	children: ReactElement
 }
 
-const MyButton = (props: MyButtonProps) => {
+const MyButton = ({ children }: MyButtonProps) => {
 	return (
 		<button className='botao'>
-			{props.children}
+			{children}
 		</button>
 	)
 }
