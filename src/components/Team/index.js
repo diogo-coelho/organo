@@ -1,6 +1,6 @@
 import './Team.css'
 import hexToRgba from 'hex-to-rgba'
-import Collaborator from '../Collaborator/Collaborator'
+import Collaborator from '../Collaborator'
 
 const Team = (props) => {
 	const css = { 

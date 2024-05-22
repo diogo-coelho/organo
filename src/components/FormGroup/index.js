@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './FormGroup.css'
-import InputField from '../InputField/InputField'
-import Combobox from '../Combobox/Combobox'
-import MyButton from '../MyButton/MyButton'
+import InputField from '../InputField'
+import Combobox from '../Combobox'
+import MyButton from '../MyButton'
 
 const FormGroup = (props) => {	
 	const [name, setName] = useState('')

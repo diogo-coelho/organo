@@ -1,9 +1,9 @@
 import { v4 as uuidv4 } from 'uuid'
 import { useState } from 'react'
-import Banner from './components/Banner/Banner';
-import FormGroup from './components/FormGroup/FormGroup';
-import Team from './components/Team/Team';
-import Footer from './components/Footer/Footer';
+import Banner from './components/Banner';
+import FormGroup from './components/FormGroup';
+import Team from './components/Team';
+import Footer from './components/Footer';
 
 function App() {
   const [teams, setTeams] = useState([
@@ -278,7 +278,10 @@ function App() {
 
   return (
     <div className="App">
-      <Banner />
+      <Banner 
+	  	enderecoImagem="/images/banner.png" 
+		textoAlternativo="Banner principal da aplicação Organo" 
+	  />
 	  <FormGroup
 	  	teams={teams.map(team => team.name)} 
 		registerTeam={registerTeam}
