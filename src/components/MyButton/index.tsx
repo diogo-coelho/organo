@@ -2,13 +2,13 @@ import React, { ReactElement } from 'react'
 import './MyButton.css'
 
 interface MyButtonProps {
-	children: ReactElement
+	children: ReactElement | string
 }
 
-const MyButton = ({ children }: MyButtonProps) => {
+const MyButton = (props: MyButtonProps) => {
 	return (
 		<button className='botao'>
-			{children}
+			{props.children}
 		</button>
 	)
 }

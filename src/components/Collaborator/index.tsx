@@ -16,7 +16,7 @@ const Collaborator = ({
 	toggleFavorite 
 }: CollaboratorProps) => {
 	const handleFavorite = () => {
-		toggleFavorite(collaborator.id)
+		toggleFavorite(collaborator?.id as string)
 	}
 
 	const propsFavorite = {
@@ -29,7 +29,7 @@ const Collaborator = ({
 			<AiFillCloseCircle 
 				size={25} 
 				className="deletar" 
-				onClick={() => onDelete(collaborator.id)} 
+				onClick={() => onDelete(collaborator?.id as string)} 
 			/>
 			<div className='cabecalho' style={{backgroundColor: backgroundColor}}>
 				<img src={collaborator.image} alt={collaborator.name} />

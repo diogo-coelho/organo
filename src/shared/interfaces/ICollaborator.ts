@@ -1,7 +1,10 @@
+import { ITeam } from "./ITeam"
+
 export interface ICollaborator {
-	id: string
+	id?: string
 	name: string
 	role: string
 	image?: string
-	isFavorite: boolean
+	team?: string
+	isFavorite?: boolean
 }

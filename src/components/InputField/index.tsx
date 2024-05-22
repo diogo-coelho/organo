@@ -2,7 +2,7 @@ import './InputField.css'
 
 interface InputFieldProps {
 	label: string, 
-	type: string, 
+	type?: string, 
 	value: string, 
 	placeholder: string, 
 	required?: boolean, 
@@ -11,7 +11,7 @@ interface InputFieldProps {
 
 const InputField = ({
 	label, 
-	type, 
+	type = "text", 
 	value, 
 	placeholder,
 	required = false,  
