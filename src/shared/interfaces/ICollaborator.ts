@@ -1,5 +1,3 @@
-import { ITeam } from "./ITeam"
-
 export interface ICollaborator {
 	id?: string
 	name: string
