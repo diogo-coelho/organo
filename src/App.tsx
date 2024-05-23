@@ -4,6 +4,8 @@ import Banner from './components/Banner';
 import FormGroup from './components/FormGroup';
 import Team from './components/Team';
 import Footer from './components/Footer';
+import { ICollaborator } from './shared/interfaces/ICollaborator';
+import { ITeam } from './shared/interfaces/ITeam';
 
 function App() {
   const [teams, setTeams] = useState([
@@ -239,17 +241,17 @@ function App() {
     },
   ]
 
-  const [collaborators, setCollaborators] = useState(initial)
+  const [collaborators, setCollaborators] = useState<ICollaborator[]>(initial)
 
-  const handleAddCollaborator = (collaborator) => {
+  const handleAddCollaborator = (collaborator: ICollaborator) => {
 	setCollaborators([...collaborators, collaborator])
   }
 
-  const onCollaboratorDelete = (id) => {
+  const onCollaboratorDelete = (id: string) => {
 	setCollaborators(collaborators.filter(collaborator => collaborator.id !== id))
   }
 
-  const changeTeamColor = (color, id) => {
+  const changeTeamColor = (color: string, id: string) => {
 	setTeams(teams.map(team => {
 		if (team.id === id) {
 			team.primaryColor = color
@@ -258,14 +260,14 @@ function App() {
 	}))
   }
 
-  const registerTeam = (newTeam) => {
+  const registerTeam = (newTeam: ITeam) => {
 	setTeams([
 		...teams, 
 		{ ...newTeam, id: uuidv4() }
 	])
   }
 
-  const toggleFavorite = (id) => {
+  const toggleFavorite = (id: string) => {
 	setCollaborators(collaborators.map
 		((collaborator)=> {
 			if (collaborator.id === id) {
@@ -295,7 +297,6 @@ function App() {
 							name={team.name} 
 							collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
 							primaryColor={team.primaryColor} 
-							secondaryColor={team.secondaryColor} 
 							onDelete={onCollaboratorDelete}
 							changeColor={changeTeamColor}
 							toggleFavorite={toggleFavorite}

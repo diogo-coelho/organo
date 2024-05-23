@@ -2,6 +2,7 @@ import './Team.css'
 import hexToRgba from 'hex-to-rgba'
 import { ICollaborator } from '../../shared/interfaces/ICollaborator'
 import Collaborator from '../Collaborator'
+import React from 'react'
 
 interface TeamProps {
 	id: string
@@ -51,7 +52,8 @@ const Team = ({
 						)
 					})}
 				</div>
-			</section> : ''
+			</section> : 
+			<React.Fragment></React.Fragment>
 
 	)
 }
