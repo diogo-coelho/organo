@@ -1,10 +1,22 @@
 import { useState } from 'react'
 import './FormGroup.css'
-import InputField from '../InputField/InputField'
-import Combobox from '../Combobox/Combobox'
-import MyButton from '../MyButton/MyButton'
+import InputField from '../InputField'
+import Combobox from '../Combobox'
+import MyButton from '../MyButton'
+import { ICollaborator } from '../../shared/interfaces/ICollaborator'
+import { ITeam } from '../../shared/interfaces/ITeam'
 
-const FormGroup = (props) => {	
+interface FormGroupProps {
+	handleAddCollaborator: (collaborator: ICollaborator) => void
+	registerTeam: (team: ITeam) => void
+	teams: string[]
+}
+
+const FormGroup = ({
+	handleAddCollaborator,
+	registerTeam,
+	teams
+}: FormGroupProps) => {	
 	const [name, setName] = useState('')
 	const [role, setRole] = useState('')
 	const [image, setImage] = useState('')
@@ -12,9 +24,9 @@ const FormGroup = (props) => {
 	const [teamName, setTeamName] = useState('')
 	const [teamColor, setTeamColor] = useState('#000000')
 	
-	const onSave = (event) => {
+	const onSave = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
-		props.handleAddCollaborator({
+		handleAddCollaborator({
 			name, role, image, team
 		})
 		setName('')
@@ -23,9 +35,9 @@ const FormGroup = (props) => {
 		setTeam('')
 	}
 
-	const onRegisterNewTeam = (event) => {
+	const onRegisterNewTeam = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
-		props.registerTeam({ name: teamName, primaryColor: teamColor })
+		registerTeam({ name: teamName, primaryColor: teamColor })
 		setTeamName('')
 		setTeamColor('#000000')
 	}
@@ -58,11 +70,11 @@ const FormGroup = (props) => {
 				<Combobox 
 					required={true} 
 					label="Time" 
-					itens={props.teams} 
+					itens={teams} 
 					value={team}
 					handleKeyup={value => setTeam(value)} 
 				/>
-				<MyButton>Criar botão</MyButton>
+				<MyButton>Criar card</MyButton>
 			</form>
 
 			<form onSubmit={onRegisterNewTeam} >
